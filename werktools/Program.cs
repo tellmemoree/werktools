@@ -35,8 +35,8 @@ string ProcessLine(string line)
                 var shoe = columns[x];
                 if (shoe != deviceType && columns.Length > x + 1)
                 {
-                    var replace0 = temp0;
-                    var replace1 = temp1;
+                    columns[x] = temp0;
+                    columns[x+1] = temp1;
 
                     break;
                 }
