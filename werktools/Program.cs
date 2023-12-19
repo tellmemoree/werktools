@@ -21,7 +21,9 @@ File.WriteAllLines("/Users/valeriizubenko/Downloads/145.csv", result);
 string ProcessLine(string line)
 {
     var columns = line.Split(SEPARATOR);
-    string deviceType = "0D";
+    string deviceType = "0D"; // setting the deviceType to look for
+
+    // for loop to start looking for things
     for (var i = 1; i < columns.Length; i++)
     {
         var column = columns[i];
@@ -33,6 +35,7 @@ string ProcessLine(string line)
             for (var x = 1; x < columns.Length; x += 2)
             {
                 var shoe = columns[x];
+                
                 if (shoe != deviceType && columns.Length > x + 1)
                 {
                     columns[x] = temp0;
